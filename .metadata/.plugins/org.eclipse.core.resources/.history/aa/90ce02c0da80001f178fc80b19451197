@@ -1,0 +1,38 @@
+package application;
+	
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Tạo đối tượng model (Sinh viên)
+        Student student = new Student("12345", "Nguyen Van A", "0123456789");
+
+        // Tạo đối tượng view (Giao diện)
+        StudentView view = new StudentView();
+
+        // Tạo đối tượng controller
+        StudentController controller = new StudentController(student, view);
+
+        // Hiển thị thông tin ban đầu
+        controller.updateView();
+
+        // Cập nhật thông tin sinh viên
+        System.out.println("\nEnter new student details:");
+
+        System.out.print("ID: ");
+        controller.setStudentID(scanner.nextLine());
+
+        System.out.print("Name: ");
+        controller.setFullName(scanner.nextLine());
+
+        System.out.print("Phone: ");
+        controller.setPhoneNumber(scanner.nextLine());
+
+        // Hiển thị thông tin đã cập nhật
+        System.out.println("\nUpdated Student Details:");
+        controller.updateView();
+    }
+}
+

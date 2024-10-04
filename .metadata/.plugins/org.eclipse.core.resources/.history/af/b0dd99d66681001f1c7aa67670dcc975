@@ -1,0 +1,9 @@
+package mvcUI;
+
+import javafx.scene.control.TextField;
+
+public class ViewStudentUI {
+	public showDetal(ModelStudent student, TextField textField, Tex) {
+		
+	}
+}

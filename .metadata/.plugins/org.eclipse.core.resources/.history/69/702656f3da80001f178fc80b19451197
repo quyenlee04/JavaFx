@@ -1,0 +1,12 @@
+package application;
+
+public class StudentView {
+    public void displayStudentDetails(Student student) {
+        System.out.println("Student Details:");
+        System.out.println("ID: " + student.getStudentID());
+        System.out.println("Name: " + student.getFullName());
+        System.out.println("Phone: " + student.getPhoneNumber());
+        System.out.println("Last Update: " + student.getUpdateTime());
+    }
+}
+

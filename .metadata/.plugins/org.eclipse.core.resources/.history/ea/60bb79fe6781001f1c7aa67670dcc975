@@ -1,0 +1,19 @@
+package mvcUI;
+
+import java.time.format.DateTimeFormatter;
+
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+
+public class ViewStudentUI {
+	public void showDetail(ModelStudent student, TextField textFieldId, TextField textFieldfullName, TextField textFieldphoneNumber) {
+		textFieldId.setText("" + student.getId());
+		textFieldfullName.setText(student.getFullName());
+		textFieldphoneNumber.setText(student.getPhoneNumber());
+	}
+	
+	public void showUpdate(ModelStudent student, TextArea textArea) {
+		String detalInfor= "Thông tin sinh viên\n"+ "MSSV: "+ student.getId() + "\nHọ và tên:" + student.getFullName() + "\nSố điện thoại:"+ student.getPhoneNumber()+ "\nNgày cập nhật:" + student.getUpdatedDate().format((DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy")));
+		
+	}
+	}

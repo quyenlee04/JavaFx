@@ -1,0 +1,51 @@
+package application;
+
+public class CalculatorModel {
+    private double result;
+    private String operator;
+    private boolean start;
+
+    public CalculatorModel() {
+        result = 0;
+        operator = "";
+        start = true;
+    }
+
+    public void reset() {
+        result = 0;
+        operator = "";
+        start = true;
+    }
+
+    public double calculate(double number, String op) throws ArithmeticException {
+        if (operator.isEmpty()) {
+            result = number;
+        } else {
+            switch (operator) {
+                case "+": result += number; break;
+                case "-": result -= number; break;
+                case "*": result *= number; break;
+                case "/": 
+                    if (number == 0) {
+                        throw new ArithmeticException("Division by zero");
+                    }
+                    result /= number;
+                    break;
+            }
+        }
+        operator = op;
+        return result;
+    }
+
+    public boolean isStart() {
+        return start;
+    }
+
+    public void setStart(boolean start) {
+        this.start = start;
+    }
+
+    public void setOperator(String operator) {
+        this.operator = operator;
+    }
+}
